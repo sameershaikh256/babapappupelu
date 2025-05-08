@@ -46,7 +46,7 @@ pwimg = "https://graph.org/file/8add8d382169e326f67e0-3bf38f92e52955e977.jpg"
 cpimg = "https://graph.org/file/5ed50675df0faf833efef-e102210eb72c1d5a17.jpg"  
 
 # Define the owner's user ID
-OWNER_ID = 8144269730 # Replace with the actual owner's user ID
+OWNER_ID = 7431004177 # Replace with the actual owner's user ID
 
 # List of sudo users (initially empty or pre-populated)
 SUDO_USERS = [1226915008,7341059064,8144269730,6440249117,6148865829,5817712634,7615363859,1511257208,5486913681,7615363859,7080838404]
