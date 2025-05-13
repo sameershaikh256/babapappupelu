@@ -1,4 +1,3 @@
-# Don't Remove Credit Telegram - @DOCTOR_JB
 import time
 import math
 import os
@@ -18,6 +17,7 @@ class Timer:
 
 from datetime import datetime,timedelta
 
+#lets do calculations
 def hrb(value, digits= 2, delim= "", postfix=""):
     """Return a human-readable file size.
     """
@@ -66,6 +66,7 @@ def hrt(seconds, precision = 0):
 
 timer = Timer()
 
+# designed by Mendax
 async def progress_bar(current, total, reply, start):
     if timer.can_send():
         now = time.time()
@@ -85,13 +86,20 @@ async def progress_bar(current, total, reply, start):
             sp = str(hrb(speed)) + "/s"
             tot = hrb(total)
             cur = hrb(current)
-            bar_length = 11
+            
+            #don't even change anything till here
+            # Calculate progress bar dots
+            #ab mila dil ko sukun #by AirPheonix
+            #change from here if you want 
+            bar_length = 10
             completed_length = int(current * bar_length / total)
             remaining_length = bar_length - completed_length
             progress_bar = "▰" * completed_length + "▱" * remaining_length
             
             try:
-                await reply.edit(f'<b>\n ╭──⌯════⬇️𝗨𝗣𝗟𝗢𝗔𝗗𝗜𝗡𝗚⬇️═════⌯──╮ \n├⚡ {progress_bar}|﹝{perc}﹞ \n├🚀 Speed » {sp} \n├📟 Processed » {cur}\n├🧲 Size - ETA » {tot} - {eta} \n├🤖 Bot Made By » @DOCTOR_JB\n╰─═══ ✪👨🏻‍💻@DOCTOR_JB👨🏻‍💻✪ ═══─╯\n\n😽कहो न p्यार है😽</b>') 
+                await reply.edit(f'╭───💥 𝗨𝗣𝗟𝗢𝗔𝗗𝗘𝗥 💥───╮ \n┣{progress_bar} \n┣𝗦𝗣𝗘𝗘𝗗 ⚡ ➠ {sp} \n┣𝗣𝗥𝗢𝗚𝗥𝗘𝗦𝗦 🧭 ➠ {perc} \n┣𝗟𝗢𝗔𝗗𝗘𝗗 🗂️ ➠ {cur} \n┣𝗦𝗜𝗭𝗘 🧲 ➠ {tot} \n┣𝗘𝗧𝗔 ⏳ ➠ {eta} \n╰────[@DOCTOR_JB](tg://user?id=8144269730)⁬────╯ \n')
+                #await reply.edit(f'`**╭━━━━━━━━━━━━━ ❀° ━━━╮**\n**┣⪼ᴘʀᴏɢʀᴇss ʙᴀʀ** \n║╭━━━━━━━━━━━━━━━➣\n║┣ ⚡[{progress_bar}] : {perc}\n║┣ 🚀 sᴘᴇᴇᴅ : {sp} \n║┣ 📟 ᴘʀᴏᴄᴇssᴇᴅ : {cur}\n║┣ 💾 sɪᴢᴇ :{tot}\n║┣ ⏳ ᴇᴛᴀ :{eta} \n║╰━━━━━━━━━━━━━━━➣\n┣⪼ᴘᴏᴡᴇʀᴇᴅ ʙʏ: @DOCTOR_JB\n╰━━━━━━━━━━━━━ ❀° ━━━╯シ`') 
+                #await reply.edit(f'`╭━━━━❰ᴘʀᴏɢʀᴇss ʙᴀʀ❱━➣ \n┣⪼ ⚡{progress_bar} : {perc}\n┣⪼ 🚀 sᴘᴇᴇᴅ : {sp} \n┣⪼ 📟 ᴘʀᴏᴄᴇssᴇᴅ : {cur}\n┣⪼ 💾 sɪᴢᴇ- ᴇᴛᴀ :  {tot} : {eta} \n@DOCTOR_JB⌋─━━➣`\n') 
             except FloodWait as e:
                 time.sleep(e.x)
                 
