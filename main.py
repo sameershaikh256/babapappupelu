@@ -140,7 +140,7 @@ random_image_url = random.choice(image_urls)
 caption = (
         "**ʜᴇʟʟᴏ👋**\n\n"
         "☆ **ɪ ᴀᴍ ᴛxᴛ ᴛᴏ ᴠɪᴅᴇᴏ ᴜᴘʟᴏᴀᴅᴇʀ ʙᴏᴛ.**\n"
-        "☆ **ғᴏʀ ᴜsᴇ ᴍᴇ sᴇɴᴅ /team.\n"
+        "☆ **ғᴏʀ ᴜsᴇ ᴍᴇ sᴇɴᴅ /sameerji.\n"
         "☆ **ғᴏʀ ɢᴜɪᴅᴇ sᴇɴᴅ /help."
 )
     
@@ -419,7 +419,7 @@ async def list_users(client: Client, msg: Message):
 async def help_command(client: Client, msg: Message):
     help_text = (
         "`/start` - Start the bot⚡\n\n"
-        "`/team` - Download and upload files (sudo)🎬\n\n"
+        "`/sameerji` - Download and upload files (sudo)🎬\n\n"
         "`/restart` - Restart the bot🔮\n\n" 
         "`/stop` - Stop ongoing process🛑\n\n"
         "`/cookies` - Upload cookies file🍪\n\n"
@@ -433,7 +433,7 @@ async def help_command(client: Client, msg: Message):
     await msg.reply_text(help_text)
 
 # Upload command handler
-@bot.on_message(filters.command(["team"]))
+@bot.on_message(filters.command(["sameerji"]))
 async def upload(bot: Client, m: Message):
     if not is_authorized(m.chat.id):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
@@ -515,7 +515,7 @@ async def upload(bot: Client, m: Message):
     
     
 
-    await editable.edit("𝗡𝗼𝘄 𝗘𝗻𝘁𝗲𝗿 𝗔 𝗖𝗮𝗽𝘁𝗶𝗼𝗻 𝗧𝗼 𝗔𝗱𝗱 𝗖𝗮𝗽𝘁𝗶𝗼𝗻 𝗢𝗻 𝗬𝗼𝘂𝗿 𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱 𝗙𝗶𝗹𝗲\n\n𝗘𝗴 » `𝗗𝗢𝗖𝗧𝗢𝗥_𝗝𝗕`")
+    await editable.edit("𝗡𝗼𝘄 𝗘𝗻𝘁𝗲𝗿 𝗔 𝗖𝗮𝗽𝘁𝗶𝗼𝗻 𝗧𝗼 𝗔𝗱𝗱 𝗖𝗮𝗽𝘁𝗶𝗼𝗻 𝗢𝗻 𝗬𝗼𝘂𝗿 𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱 𝗙𝗶𝗹𝗲\n\n𝗘𝗴 » `PAPPU PELU`")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -644,13 +644,13 @@ async def upload(bot: Client, m: Message):
 
             try:  
 
-                cc = f'**[🎬] 𝗩𝗶𝗱_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.({res}). STUDENTS💙.mkv\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
-                #cpw = f'**[🎬] 𝗩𝗶𝗱_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.({res}).STUDENTS💙.mkv\n\n\n**🔗𝗩𝗶𝗱𝗲𝗼 𝗨𝗿𝗹 ➤ <a href="{url}">__**Click Here to Watch Video**__</a>**\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
-                #cyt = f'**[🎬] 𝗩𝗶𝗱_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.({res}).STUDENTS💙.mp4\n\n\n**🔗𝗩𝗶𝗱𝗲𝗼 𝗨𝗿𝗹 ➤ <a href="{url}">__**Click Here to Watch Video**__</a>**\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
-                cpvod = f'**[🎬] 𝗩𝗶𝗱_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.({res}).STUDENTS💙.mkv\n\n\n**🔗𝗩𝗶𝗱𝗲𝗼 𝗨𝗿𝗹 ➤ <a href="{url}">__**Click Here to Watch Video**__</a>**\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
-                cimg = f'**[📁] 𝗣𝗱𝗳_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.STUDENTS💙.jpg\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
-                cczip = f'**[📁] 𝗣𝗱𝗳_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.STUDENTS💙.zip\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
-                cc1 = f'**[📁] 𝗣𝗱𝗳_𝗜𝗱 :** {str(count).zfill(3)}.**\n\n\n**☘️𝗧𝗶𝘁𝗹𝗲 𝗡𝗮𝗺𝗲** ➤ {name1}.STUDENTS💙.pdf\n\n\n**<pre><code>📚𝗕𝗮𝘁𝗰𝗵 𝗡𝗮𝗺𝗲** ➤ **{b_name}</code></pre>**\n\n\n**📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆** ➤  **{raw_text3}**'
+                cc = f'**\n❀° ┄───╮**\n✦** {str(count).zfill(3)}.✦\n**╰───┄ °❀\n\n\n**🦇 𝗟𝗘𝗖 𝗡𝗔𝗠𝗘 ** ➺ {name1}.\n├── Resolution➥ ({res}).\n├── Extention➥ @BABA_ASP.mkv\n\n\n**<pre><code>🦈 𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘** ➺ **{b_name}</code></pre>**\n\n\n**📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 ** ➽  **\n\n༶•┈┈⛧┈♛┈⛧┈┈•༶**\n\n{raw_text3}✦\n\n**༶•┈┈⛧┈♛┈⛧┈┈•༶**'
+                #cpw = f'**\n❀° ┄───╮**\n✦:** {str(count).zfill(3)}.✦\n**╰───┄ °❀\n\n\n**🦇 𝗟𝗘𝗖 𝗡𝗔𝗠𝗘 ** ➺ {name1}.\n├── Resolution➥ ({res}).\n├── Extention➥ @BABA_ASP.mkv\n\n\n**🔗𝗩𝗶𝗱𝗲𝗼 𝗨𝗿𝗹 ➤ <a href="{url}">__**Click Here to Watch Video**__</a>**\n\n\n**<pre><code>🦈 𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘** ➺ **{b_name}</code></pre>**\n\n\n**📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 ** ➽  **\n\n༶•┈┈⛧┈♛┈⛧┈┈•༶**\n\n{raw_text3}✦\n\n**༶•┈┈⛧┈♛┈⛧┈┈•༶**'
+                #cyt = f'**\n❀° ┄───╮**\n✦** {str(count).zfill(3)}.✦\n**╰───┄ °❀\n\n\n**🦇 𝗟𝗘𝗖 𝗡𝗔𝗠𝗘 ** ➺ {name1}.\n├── Resolution➥ ({res}).\n├── Extention➥ @BABA_ASP.mp4\n\n\n**🔗𝗩𝗶𝗱𝗲𝗼 𝗨𝗿𝗹 ➤ <a href="{url}">__**Click Here to Watch Video**__</a>**\n\n\n**<pre><code>🦈 𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘** ➺ **{b_name}</code></pre>**\n\n\n**📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 ** ➽  **\n\n༶•┈┈⛧┈♛┈⛧┈┈•༶**\n\n{raw_text3}✦\n\n**༶•┈┈⛧┈♛┈⛧┈┈•༶**'
+                cpvod = f'**\n❀° ┄───╮**\n✦** {str(count).zfill(3)}.✦\n**╰───┄ °❀\n\n\n**🦇 𝗟𝗘𝗖 𝗡𝗔𝗠𝗘 ** ➺ {name1}.\n├── Resolution➥ ({res}).\n├── Extention➥ @BABA_ASP.mkv\n\n\n**🔗𝗩𝗶𝗱𝗲𝗼 𝗨𝗿𝗹 ➤ <a href="{url}">__**Click Here to Watch Video**__</a>**\n\n\n**<pre><code>🦈 𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘** ➺ **{b_name}</code></pre>**\n\n\n**📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 ** ➽  **\n\n༶•┈┈⛧┈♛┈⛧┈┈•༶**\n\n{raw_text3}✦\n\n**༶•┈┈⛧┈♛┈⛧┈┈•༶**'
+                cimg = f'**\n❀° ┄───╮**\n✦** {str(count).zfill(3)}.✦\n**╰───┄ °❀\n\n\n**🍷 𝗣𝗗𝗙 𝗡𝗔𝗠𝗘 ** ➺ {name1}.\n├── Extention➥ @BABA_ASPjpg\n\n\n**<pre><code>🦈 𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘** ➺ **{b_name}</code></pre>**\n\n\n**📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 ** ➽  **\n\n༶•┈┈⛧┈♛┈⛧┈┈•༶**\n\n{raw_text3}✦\n\n**༶•┈┈⛧┈♛┈⛧┈┈•༶**'
+                cczip = f'**\n❀° ┄───╮**\n✦** {str(count).zfill(3)}.✦\n**╰───┄ °❀\n\n\n**🍷 𝗣𝗗𝗙 𝗡𝗔𝗠𝗘 ** ➺ {name1}.\n├── Extention➥ @BABA_ASP.zip\n\n\n**<pre><code>🦈 𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘** ➺ **{b_name}</code></pre>**\n\n\n**📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 ** ➽  **\n\n༶•┈┈⛧┈♛┈⛧┈┈•༶**\n\n{raw_text3}✦\n\n**༶•┈┈⛧┈♛┈⛧┈┈•༶**'
+                cc1 = f'**\n❀° ┄───╮**\n✦** {str(count).zfill(3)}.✦\n**╰───┄ °❀\n\n\n**🍷 𝗣𝗗𝗙 𝗡𝗔𝗠𝗘 ** ➺ {name1}.\n├── Extention➥ @BABA_ASP.pdf\n\n\n**<pre><code>🦈 𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘** ➺ **{b_name}</code></pre>**\n\n\n**📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐁𝐘 ** ➽  **\n\n༶•┈┈⛧┈♛┈⛧┈┈•༶**\n\n{raw_text3}✦\n\n**༶•┈┈⛧┈♛┈⛧┈┈•༶**'
           
                 if "drive" in url:
                     try:
