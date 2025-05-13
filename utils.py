@@ -1,6 +1,6 @@
 import time
-import math
-import os
+import random
+from datetime import timedelta
 from pyrogram.errors import FloodWait
 
 class Timer:
@@ -14,13 +14,7 @@ class Timer:
             return True
         return False
 
-
-from datetime import datetime,timedelta
-
-#lets do calculations
-def hrb(value, digits= 2, delim= "", postfix=""):
-    """Return a human-readable file size.
-    """
+def hrb(value, digits=2, delim="", postfix=""):
     if value is None:
         return None
     chosen_unit = "B"
@@ -32,12 +26,9 @@ def hrb(value, digits= 2, delim= "", postfix=""):
             break
     return f"{value:.{digits}f}" + delim + chosen_unit + postfix
 
-def hrt(seconds, precision = 0):
-    """Return a human-readable time delta as a string.
-    """
+def hrt(seconds, precision=0):
     pieces = []
     value = timedelta(seconds=seconds)
-    
 
     if value.days:
         pieces.append(f"{value.days}d")
@@ -62,11 +53,11 @@ def hrt(seconds, precision = 0):
 
     return "".join(pieces[:precision])
 
-
-
 timer = Timer()
 
-# designed by Mendax
+EMOJIS = ["🦋", "🔥", "💥", "💫", "👑", "🥀", "🕊", "💎", "💖", "✨", "🌟", "🕉", "☯️", "🐉", "❤️‍🔥", "💎", "💖"]
+ 
+
 async def progress_bar(current, total, reply, start):
     if timer.can_send():
         now = time.time()
@@ -78,28 +69,32 @@ async def progress_bar(current, total, reply, start):
             elapsed_time = round(diff)
             speed = current / elapsed_time
             remaining_bytes = total - current
-            if speed > 0:
-                eta_seconds = remaining_bytes / speed
-                eta = hrt(eta_seconds, precision=1)
-            else:
-                eta = "-"
+            eta = hrt(remaining_bytes / speed, precision=1) if speed > 0 else "-"
             sp = str(hrb(speed)) + "/s"
             tot = hrb(total)
             cur = hrb(current)
-            
-            #don't even change anything till here
-            # Calculate progress bar dots
-            #ab mila dil ko sukun #by AirPheonix
-            #change from here if you want 
-            bar_length = 10
+
+            # Bar logic (►►►▷▷▷ style)
+            bar_length = 12
             completed_length = int(current * bar_length / total)
             remaining_length = bar_length - completed_length
-            progress_bar = "▰" * completed_length + "▱" * remaining_length
-            
+            progress_bar_visual = "►" * completed_length + "▷" * remaining_length
+
+            # Random emoji
+            big_emoji = random.choice(EMOJIS)
+
             try:
-                await reply.edit(f'╭───💥 𝗨𝗣𝗟𝗢𝗔𝗗𝗘𝗥 💥───╮ \n┣{progress_bar} \n┣𝗦𝗣𝗘𝗘𝗗 ⚡ ➠ {sp} \n┣𝗣𝗥𝗢𝗚𝗥𝗘𝗦𝗦 🧭 ➠ {perc} \n┣𝗟𝗢𝗔𝗗𝗘𝗗 🗂️ ➠ {cur} \n┣𝗦𝗜𝗭𝗘 🧲 ➠ {tot} \n┣𝗘𝗧𝗔 ⏳ ➠ {eta} \n╰────[@DOCTOR_JB](tg://user?id=8144269730)⁬────╯ \n')
-                #await reply.edit(f'`**╭━━━━━━━━━━━━━ ❀° ━━━╮**\n**┣⪼ᴘʀᴏɢʀᴇss ʙᴀʀ** \n║╭━━━━━━━━━━━━━━━➣\n║┣ ⚡[{progress_bar}] : {perc}\n║┣ 🚀 sᴘᴇᴇᴅ : {sp} \n║┣ 📟 ᴘʀᴏᴄᴇssᴇᴅ : {cur}\n║┣ 💾 sɪᴢᴇ :{tot}\n║┣ ⏳ ᴇᴛᴀ :{eta} \n║╰━━━━━━━━━━━━━━━➣\n┣⪼ᴘᴏᴡᴇʀᴇᴅ ʙʏ: @DOCTOR_JB\n╰━━━━━━━━━━━━━ ❀° ━━━╯シ`') 
-                #await reply.edit(f'`╭━━━━❰ᴘʀᴏɢʀᴇss ʙᴀʀ❱━➣ \n┣⪼ ⚡{progress_bar} : {perc}\n┣⪼ 🚀 sᴘᴇᴇᴅ : {sp} \n┣⪼ 📟 ᴘʀᴏᴄᴇssᴇᴅ : {cur}\n┣⪼ 💾 sɪᴢᴇ- ᴇᴛᴀ :  {tot} : {eta} \n@DOCTOR_JB⌋─━━➣`\n') 
+                await reply.edit(
+                    f'<b>🔥•°•⩺SAMEER BHYYA⩹•°•💚\n\n'
+                    f'╭━━━━━━━━━━𝗔💚𝗦━━━━━━━━➣\n\n'
+                    f'┣⪼ 🚀 <u>↑↓𝗨𝗣𝗟𝗢𝗔𝗗𝗜𝗡𝗚 𝗪𝗔𝗜𝗧...↑↓</u> 🚀\n\n'
+                    f'┣⪼ 📈 {progress_bar_visual} | {perc}\n\n'
+                    f'┣⪼ SPEED ⚡ {sp}\n\n'
+                    f'┣⪼ LOADED 📦 {cur}\n\n'
+                    f'┣⪼ SIZE 🧲 {tot}\n\n'
+                    f'┣⪼ ETA ⏳ {eta}\n\n'
+                    f'╰━《@CHAT_WITH_SAMEER_BOT》━➣\n\n'
+                    f'【🆔@SAMEER_OFFICAL_092】\n\n {big_emoji}</b>'
+                )
             except FloodWait as e:
                 time.sleep(e.x)
-                
