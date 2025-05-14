@@ -1,18 +1,18 @@
 <h1 align="center">
-  🇮🇳 𝘿𝙊𝘾𝙏𝙊𝙍_𝙅𝘽 ᴛxᴛ ᴜᴘʟᴏᴀᴅᴇʀ 🇮🇳
+  🇮🇳 BABA TILLU ᴛxᴛ ᴜᴘʟᴏᴀᴅᴇʀ 🇮🇳
 </h1>
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+To+Txt+Uploader+Bot+!)
 
 ## Credit
 
-🥳 Credit Goes To [@DOCTOR_JB](https://t.me/DOCTOR_JB)
+🥳 Credit Goes To [@BABA_tillu_Gk](https://t.me/BABA_tillu_Gk)
 
   
 ## 🔥 Commands
 
 - **`/start`**: ⚡ check bot is alive.
-- **`/JB`**:  📁 upload txt file.
+- **`/sameerji`**:  📁 upload txt file.
 - **`/stop`**: 🛑 stop ongoing process.
 - **`/restart`**: 🔮 restart the bot.
 - **`/cookies`**: 🍪 upload cookies file.
